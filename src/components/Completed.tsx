@@ -12,9 +12,30 @@ const Completed = () => {
       <View style={styles.Checbox}>
         <Checkbox />
         <Text style={[styles.textItem, {color: theme.textColor}]}>
-          Upload 1099-R to TurboTax
+        Feed you fishes at 09:00
+        </Text>
+        
+      </View>
+      <View style={styles.Checbox}>
+        <Checkbox />
+        <Text style={[styles.textItem, {color: theme.textColor}]}>
+        Feed you fishes at 21:00
+        </Text>
+        
+      </View>
+      <View style={styles.Checbox}>
+        <Checkbox />
+        <Text style={[styles.textItem, {color: theme.textColor}]}>
+         Write React redux todo app
+        </Text> 
+      </View>
+      <View style={styles.Checbox}>
+        <Checkbox />
+        <Text style={[styles.textItem, {color: theme.textColor}]}>
+        Sleep 1 hour
         </Text>
       </View>
+  
     </ScrollView>
   );
 };
