@@ -1,22 +1,21 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {Provider} from 'react-redux';
+import {ThemeProvider} from './src/context/Theme';
 import HomeScreen from './src/screens/HomeScreen';
-import AddTodoScreen from './src/components/AddTodoScreen';
-import store from './src/store/store';
+import {TodoReducer} from './src/redux/reducers/Reducer';
+import {createStore} from 'redux';
 
-const Stack = createStackNavigator();
+let store = createStore(TodoReducer);
 
-const App: React.FC = () => {
+export type RootState = ReturnType<typeof store.getState>;
+
+const App = () => {
+  console.log(typeof store.getState);
+
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="AddTodo" component={AddTodoScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <ThemeProvider>
+        <HomeScreen />
+      </ThemeProvider>
     </Provider>
   );
 };
